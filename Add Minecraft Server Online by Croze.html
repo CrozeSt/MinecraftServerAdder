@@ -1,0 +1,29 @@
+<html lang='en' class='minecraft://?addExternalServer='>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Server Adder Online</title>
+  </head>
+  <body>
+    <p>Created By Croze Studios</p>
+    <form role="search" id="form">
+      <input type="search" id="server" name="s" placeholder="server" aria-label="Type In Server IP">
+      <input type="search" id="port" name="p" placeholder="port" aria-label="Type In Server Port">
+      <button>Add Server</button>
+    </form>
+    <a href="steam://console"><button>Launch Steam With Console</button></a>
+    <script>
+      const f = document.getElementById('form');
+      const s = document.getElementById('server');
+      const p = document.getElementById('port');
+
+      function submitted(event) {
+        event.preventDefault();
+        const url = 'minecraft://?addExternalServer=' + s.value + '|' + s.value + ':' + p.value;
+        const win = window.open(url, '_self');
+        win.focus();
+      }
+
+      f.addEventListener('submit', submitted);
+    </script>
+  </body>
+</html>
